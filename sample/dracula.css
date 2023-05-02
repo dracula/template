@@ -17,7 +17,7 @@ body {
   opacity: 0;
   display: none;
   visibility: hidden;
-  font-family: "Transylvania";
+  font-family: 'Transylvania';
   height: calc(var(--deathDate) - var(--birthDate));
 }
 
@@ -26,8 +26,8 @@ body {
 }
 
 @font-face {
-  font-family: "Transylvania";
-  src: url("/location/Transylvania.woff2") format("woff2");
+  font-family: 'Transylvania';
+  src: url('/location/Transylvania.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
 }

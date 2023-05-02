@@ -3,31 +3,31 @@
  */
 
 interface VampireProps {
-  location: string;
-  birthDate: number;
-  deathDate: number;
-  weaknesses: string[];
+  location: string
+  birthDate: number
+  deathDate: number
+  weaknesses: string[]
 }
 
 class Vampire {
-  location: string;
-  birthDate: number;
-  deathDate: number;
-  weaknesses: string[];
+  location: string
+  birthDate: number
+  deathDate: number
+  weaknesses: string[]
 
   constructor(props: VampireProps) {
-    this.location = props.location;
-    this.birthDate = props.birthDate;
-    this.deathDate = props.deathDate;
-    this.weaknesses = props.weaknesses;
+    this.location = props.location
+    this.birthDate = props.birthDate
+    this.deathDate = props.deathDate
+    this.weaknesses = props.weaknesses
   }
 
   get age(): number {
-    return this.calcAge();
+    return this.calcAge()
   }
 
   calcAge(): number {
-    return this.deathDate - this.birthDate;
+    return this.deathDate - this.birthDate
   }
 }
 
@@ -38,4 +38,4 @@ const Dracula: VampireProps = new Vampire({
   birthDate: 1428,
   deathDate: 1476,
   weaknesses: ['Sunlight', 'Garlic'],
-});
+})

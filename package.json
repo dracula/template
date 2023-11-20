@@ -1,0 +1,28 @@
+{
+  "name": "dracula-theme-template",
+  "version": "1.0.0",
+  "description": "🧛🏻‍♂️ Dark theme for Foobar",
+  "main": "readme.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dracula/template.git"
+  },
+  "author": "Dracula Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dracula/template/issues"
+  },
+  "homepage": "https://github.com/dracula/template#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "prettier": "3.1.0"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}

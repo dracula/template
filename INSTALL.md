@@ -10,7 +10,7 @@ git clone https://github.com/dracula/foobar.git
 
 #### Install manually
 
-Download using the [GitHub `.zip` download](https://github.com/dracula/foobar/archive/master.zip) option and unzip them.
+Download using the [GitHub `.zip` download](https://github.com/dracula/foobar/archive/main.zip) option and unzip them.
 
 #### Activating theme
 

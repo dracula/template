@@ -2,33 +2,41 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Dracula</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dracula and Alucard</title>
   </head>
   <body>
-    <!-- Once upon a time... -->
-    <h1>Vampires</h1>
-
-    <form>
-      <label for="location">Location</label>
-      <input type="text" name="location" value="Transylvania" />
-      <label for="birthDate">Birth Date:</label>
-      <input type="number" name="birthDate" value="1428" />
-      <label for="deathDate">Death Date:</label>
-      <input type="number" name="deathDate" value="1476" />
-      <label for="weaknesses">Weaknesses:</label>
-      <input type="checkbox" name="weaknesses" value="Sunlight" checked />
-      <input type="checkbox" name="weaknesses" value="Garlic" checked />
-
-      <button type="submit">Submit</button>
-    </form>
+    <main>
+      <h1>Vampire ledger</h1>
+      <section aria-label="vampire ages">
+        <p id="result"></p>
+      </section>
+    </main>
 
     <script>
-      // ...there was a guy named Vlad
-      const form = document.querySelector("form");
-      form.addEventListener("submit", (e) => {
-        const { birthDate, deathDate } = e.target;
-        const age = deathDate.value - birthDate.value;
-      });
+      const vampires = [
+        {
+          name: "Dracula",
+          birthDate: 1428,
+          deathDate: 1476,
+          location: "Transylvania",
+        },
+        {
+          name: "Alucard",
+          birthDate: 1458,
+          deathDate: 1510,
+          location: "Wallachia",
+        },
+      ];
+
+      const summary = vampires
+        .map(
+          (vampire) =>
+            `${vampire.name}: ${vampire.deathDate - vampire.birthDate}`,
+        )
+        .join(" | ");
+
+      document.querySelector("#result").textContent = summary;
     </script>
   </body>
 </html>

@@ -1,34 +1,35 @@
 <?php
-/*
- * Once upon a time...
- */
-class Vampire {
-  public string $location;
-  public int $birthDate;
-  public int $deathDate;
-  public array $weaknesses;
 
-  public function __construct(array $props) {
-    $this->location = $props['location'];
-    $this->birthDate = $props['birthDate'];
-    $this->deathDate = $props['deathDate'];
-    $this->weaknesses = $props['weaknesses'];
-  }
+declare(strict_types=1);
 
-  public function age(): int {
-    return $this->calcAge();
-  }
+final readonly class Vampire
+{
+    public function __construct(
+        public string $location,
+        public int $birthDate,
+        public int $deathDate,
+        /** @var list<string> */
+        public array $weaknesses,
+    ) {}
 
-  private function calcAge(): int {
-    return $this->deathDate - $this->birthDate;
-  }
+    public function age(): int
+    {
+        return $this->deathDate - $this->birthDate;
+    }
 }
 
-// ...there was a guy named Vlad
-$Dracula = new Vampire([
-  'location' => 'Transylvania',
-  'birthDate' => 1428,
-  'deathDate' => 1476,
-  'weaknesses' => ['Sunlight', 'Garlic']
-]);
-?>
+$dracula = new Vampire(
+    location: "Transylvania",
+    birthDate: 1428,
+    deathDate: 1476,
+    weaknesses: ["Sunlight", "Garlic"],
+);
+
+$alucard = new Vampire(
+    location: "Wallachia",
+    birthDate: 1458,
+    deathDate: 1510,
+    weaknesses: ["Holy Water"],
+);
+
+echo "Dracula age: {$dracula->age()}, Alucard age: {$alucard->age()}";

@@ -1,33 +1,10 @@
-#
-# Once upon a time...
-#
-
-class Vampire
-  def initialize(opts)
-    @location = opts[:location]
-    @birthDate = opts[:birthDate]
-    @deathDate = opts[:deathDate]
-    @weaknesses = opts[:weaknesses]
-  end
-
+Vampire = Data.define(:location, :birth_date, :death_date, :weaknesses) do
   def age
-    calcAge
-  end
-
-  private
-
-  def calcAge
-    @deathDate - @birthDate
+    death_date - birth_date
   end
 end
 
-# ...there was a guy named Vlad
+dracula = Vampire.new("Transylvania", 1428, 1476, %w[Sunlight Garlic])
+alucard = Vampire.new("Wallachia", 1458, 1510, ["Holy Water"])
 
-dracula = Vampire.new(
-  location: 'Transylvania',
-  birthDate: 1428,
-  deathDate: 1476,
-  weaknesses: %w[Sunlight Garlic]
-)
-
-puts dracula.age
+puts({ dracula_age: dracula.age, alucard_age: alucard.age })

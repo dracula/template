@@ -1,30 +1,16 @@
-class Vampire {
-  private String location;
-  private int birthDate;
-  private int deathDate;
-  private String[] weaknesses;
+import java.util.List;
 
-  public Vampire(String location, int birthDate, int deathDate, String[] weaknesses) {
-    this.location = location;
-    this.birthDate = birthDate;
-    this.deathDate = deathDate;
-    this.weaknesses = weaknesses;
-  }
-
-  public int getAge() {
-    return this.calcAge();
-  }
-
-  public int calcAge() {
-    return this.deathDate - this.birthDate;
+record Vampire(String location, int birthDate, int deathDate, List<String> weaknesses) {
+  int age() {
+    return deathDate - birthDate;
   }
 }
 
-// ...there was a guy named Vlad
-public class dracula {
-  Vampire vampire = new Vampire(
-      "Transylvania",
-      1428,
-      1476,
-      new String[] { "Sunlight", "Garlic" });
+final class DraculaSample {
+  public static void main(String[] args) {
+    var dracula = new Vampire("Transylvania", 1428, 1476, List.of("Sunlight", "Garlic"));
+    var alucard = new Vampire("Wallachia", 1458, 1510, List.of("Holy Water"));
+
+    System.out.printf("Dracula: %d, Alucard: %d%n", dracula.age(), alucard.age());
+  }
 }

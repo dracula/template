@@ -1,43 +1,15 @@
-/*
-* Once upon a time...
-*/
-
-public class Vampire
+public sealed record Vampire(string Location, int BirthDate, int DeathDate, string[] Weaknesses)
 {
-  public string Location { get; private set; }
-  public int BirthDate { get; private set; }
-  public int DeathDate { get; private set; }
-  public string[] Weaknesses { get; private set; }
-
-  public Vampire(string location, int birthDate, int deathDate, string[] weaknesses)
-  {
-    Location = location;
-    BirthDate = birthDate;
-    DeathDate = deathDate;
-    Weaknesses = weaknesses;
-  }
-
-  public int Age()
-  {
-    return calcAge();
-  }
-
-  private int calcAge()
-  {
-    return DeathDate - BirthDate;
-  }
+    public int Age => DeathDate - BirthDate;
 }
-class Program
-{
-  static void Main(string[] args)
-  {
-    // ...there was a guy named Vlad
 
-    var vampire = new Vampire(
-      "Transylvania",
-      1428,
-      1476,
-      new string[] { "Sunlight", "Garlic" }
-    );
-  }
+public static class Program
+{
+    public static void Main()
+    {
+        var dracula = new Vampire("Transylvania", 1428, 1476, ["Sunlight", "Garlic"]);
+        var alucard = new Vampire("Wallachia", 1458, 1510, ["Holy Water"]);
+
+        Console.WriteLine($"Dracula: {dracula.Age}, Alucard: {alucard.Age}");
+    }
 }

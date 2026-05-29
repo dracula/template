@@ -1,16 +1,8 @@
-<!--
-  Once a upon a time...
--->
-
 # Vampires
 
-| Name       | Value            |
-| ---------- | ---------------- |
-| location   | Transylvania     |
-| birth date | 1428             |
-| death date | 1476             |
-| weaknesses | Sunlight, Garlic |
+Dracula and Alucard keep the same dark palette, but with a cleaner modern style.
 
-<!-- ...There was a guy named Vlad -->
+- Dracula: `Transylvania`, `birthDate: 1428`, `deathDate: 1476`, weaknesses `Sunlight`, `Garlic`
+- Alucard: `Wallachia`, `birthDate: 1458`, `deathDate: 1510`, weakness `Holy Water`
 
-> The **age** is the `deathDate` minus the `birthDate`
+> Age = `deathDate - birthDate`

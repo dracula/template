@@ -1,24 +1,22 @@
-structure Vampire = struct
-  type t = {
-    location: string,
-    birthDate: int,
-    deathDate: int,
-    weaknesses: string list
-  }
+(*
+ * Once upon a time...
+ *)
 
-  fun age (v : t) : int = #deathDate v - #birthDate v
+structure Vampire = struct
+  type params = {location: string,
+                 birthDate: int,
+                 deathDate: int,
+                 weaknesses: string list}
+  type vampire = params
+  fun new (v : params) : vampire = v
+  fun age (v : vampire) : int = (#deathDate v) - (#birthDate v)
 end
 
-val dracula : Vampire.t = {
-  location = "Transylvania",
-  birthDate = 1428,
-  deathDate = 1476,
-  weaknesses = ["Sunlight", "Garlic"]
-}
+(* ...there was a guy named Vlad *)
 
-val alucard : Vampire.t = {
-  location = "Wallachia",
-  birthDate = 1458,
-  deathDate = 1510,
-  weaknesses = ["Holy Water"]
-}
+structure Romainia = struct
+  val dracula = Vampire.new {location="Transylvania",
+                             birthDate=1428,
+                             deathDate=1476,
+                             weaknesses=["Sunlight", "Garlic"]}
+end

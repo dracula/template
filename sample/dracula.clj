@@ -1,14 +1,13 @@
-(ns dracula.core)
+(comment
+  "Once upon a time...")
 
-(defn age [{:keys [birth-date death-date]}]
-  (- death-date birth-date))
+(ns clj-dracula)
 
-(let [dracula {:location "Transylvania"
-               :birth-date 1428
-               :death-date 1476
-               :weaknesses ["Sunlight" "Garlic"]}
-      alucard {:location "Wallachia"
-               :birth-date 1458
-               :death-date 1510
-               :weaknesses ["Holy Water"]}]
-  (println {:dracula-age (age dracula) :alucard-age (age alucard)}))
+(defstruct dracula :location :birth-date :death-date :weaknesses)
+
+(defn age
+  [vamp] (- (vamp :death-date) (vamp :birth-date)))
+
+;;...there was a guy named Vlad
+(let [d (struct dracula "Transylvania" 1428 1476 '("Sunlight", "Garlic"))]
+  (println (age d)))

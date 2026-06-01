@@ -1,22 +1,33 @@
 defmodule Vampire do
-  @enforce_keys [:location, :birth_date, :death_date, :weaknesses]
+  @moduledoc """
+  Once upon a time...
+  """
+
   defstruct [:location, :birth_date, :death_date, :weaknesses]
 
-  def age(%__MODULE__{} = vampire), do: vampire.death_date - vampire.birth_date
+  def new(props) do
+    %__MODULE__{
+      location: props[:location],
+      birth_date: props[:birth_date],
+      death_date: props[:death_date],
+      weaknesses: props[:weaknesses]
+    }
+  end
+  
+  def age(vampire) do
+    calc_age(vampire)
+  end
+
+  defp calc_age(vampire) do
+    vampire.death_date - vampire.birth_date
+  end
 end
 
-dracula = struct!(Vampire,
+# ...there was a guy named Vlad
+
+dracula = Vampire.new(
   location: "Transylvania",
-  birth_date: 1428,
-  death_date: 1476,
+  birthDate: 1428,
+  deathDate: 1476,
   weaknesses: ["Sunlight", "Garlic"]
 )
-
-alucard = struct!(Vampire,
-  location: "Wallachia",
-  birth_date: 1458,
-  death_date: 1510,
-  weaknesses: ["Holy Water"]
-)
-
-IO.inspect(%{dracula_age: Vampire.age(dracula), alucard_age: Vampire.age(alucard)})

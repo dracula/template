@@ -1,31 +1,46 @@
+ // Once upon a time...
+
 #[derive(Debug)]
-struct Vampire {
-    location: String,
-    birth_date: u16,
-    death_date: u16,
-    weaknesses: Vec<String>,
+pub struct Vampire {
+	location: String,
+	birth_date: u16,
+	death_date: u16,
+	weaknesses: Vec<String>,
 }
 
 impl Vampire {
-    fn age(&self) -> u16 {
-        self.death_date - self.birth_date
-    }
+	pub fn new(
+		location: String,
+		birth_date: u16,
+		death_date: u16,
+		weaknesses: Vec<String>,
+	) -> Self {
+		Vampire {
+			location,
+			birth_date,
+			death_date,
+			weaknesses,
+		}
+	}
+
+	pub fn age(&self) -> u16 {
+		self.calc_age()
+	}
+
+	fn calc_age(&self) -> u16 {
+		self.death_date - self.birth_date
+	}
 }
 
+// ...there was a guy named Vlad
+
 fn main() {
-    let dracula = Vampire {
-        location: "Transylvania".to_owned(),
-        birth_date: 1428,
-        death_date: 1476,
-        weaknesses: vec!["Sunlight".to_owned(), "Garlic".to_owned()],
-    };
+	let dracula = Vampire::new(
+		"Transylvania".to_string(),
+		1428,
+		1476,
+		vec!["Sunlight".to_string(), "Garlic".to_string()],
+	);
 
-    let alucard = Vampire {
-        location: "Wallachia".to_owned(),
-        birth_date: 1458,
-        death_date: 1510,
-        weaknesses: vec!["Holy Water".to_owned()],
-    };
-
-    println!("Dracula: {}, Alucard: {}", dracula.age(), alucard.age());
+	println!("{:?}", dracula);
 }

@@ -1,37 +1,33 @@
+/*
+ * Once upon a time...
+ */
+
 :root {
-  --dracula-bg: #282a36;
-  --dracula-fg: #f8f8f2;
-  --dracula-accent: #ff79c6;
-  --alucard-accent: #8be9fd;
+  --birthDate: 1428px;
+  --deathDate: 1476px;
 }
 
 body {
-  margin: 0;
-  color: var(--dracula-fg);
-  background-color: var(--dracula-bg);
-  font-family: "Transylvania", system-ui, sans-serif;
+  background: #000;
 }
 
-.vampire-card {
-  border: 0.0625rem solid
-    color-mix(in oklab, var(--dracula-fg) 20%, transparent);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  transition:
-    transform 220ms ease-out,
-    opacity 220ms ease-out;
+/* ...there was a guy named Vlad */
+
+#dracula {
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  font-family: "Transylvania";
+  height: calc(var(--deathDate) - var(--birthDate));
 }
 
-.vampire-card[data-name="dracula"] {
-  box-shadow: inset 0 0 0 0.125rem var(--dracula-accent);
+.cape {
+  background: #ff0000 !important;
 }
 
-.vampire-card[data-name="alucard"] {
-  box-shadow: inset 0 0 0 0.125rem var(--alucard-accent);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vampire-card {
-    transition: none;
-  }
+@font-face {
+  font-family: "Transylvania";
+  src: url("/location/Transylvania.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }

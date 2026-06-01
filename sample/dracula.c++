@@ -1,29 +1,38 @@
 #include <string>
-#include <iostream>
-#include <utility>
 #include <vector>
+
+/*
+ * Once upon a time...
+ */
 
 class Vampire {
  public:
-  Vampire(std::string location, int birthDate, int deathDate, std::vector<std::string> weaknesses)
-      : location_{std::move(location)},
-        birthDate_{birthDate},
-        deathDate_{deathDate},
-        weaknesses_{std::move(weaknesses)} {}
+  Vampire(std::string location, int birth_date, int death_date,
+          std::vector<std::string> weaknesses)
+      : _location{location},
+        _birth_date{birth_date},
+        _death_date{death_date},
+        _weaknesses{weaknesses} {}
 
-  int age() const { return deathDate_ - birthDate_; }
+  int age() { return calc_age(); }
 
  private:
-  std::string location_;
-  int birthDate_;
-  int deathDate_;
-  std::vector<std::string> weaknesses_;
+  std::string _location;
+  int _birth_date;
+  int _death_date;
+  std::vector<std::string> _weaknesses;
+
+  int calc_age() { return _death_date - _birth_date; }
 };
 
-int main() {
-  auto dracula = Vampire{"Transylvania", 1428, 1476, {"Sunlight", "Garlic"}};
-  auto alucard = Vampire{"Wallachia", 1458, 1510, {"Holy Water"}};
+// ...there was a guy named Vlad
 
-  std::cout << "Dracula: " << dracula.age() << ", Alucard: " << alucard.age() << '\n';
+int main() {
+  std::string location = "Transylvania";
+  int birth_date = 1428, death_date = 1476;
+  std::vector<std::string> weaknesses { "Sunlight", "Garlic" };
+
+  Vampire dracula{location, birth_date, death_date, weaknesses};
+
   return 0;
 }

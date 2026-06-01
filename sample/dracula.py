@@ -1,19 +1,23 @@
-from dataclasses import dataclass
+# Once upon a time...
 
-
-@dataclass(frozen=True, slots=True)
 class Vampire:
-    location: str
-    birth_date: int
-    death_date: int
-    weaknesses: tuple[str, ...]
+  def __init__(self, props):
+    self.location = props['location']
+    self.birthDate = props['birthDate']
+    self.deathDate = props['deathDate']
+    self.weaknesses = props['weaknesses']
 
-    @property
-    def age(self) -> int:
-        return self.death_date - self.birth_date
+  def get_age(self):
+    return self.calc_age()
 
+  def calc_age(self):
+    return self.deathDate - self.birthDate
 
-dracula = Vampire("Transylvania", 1428, 1476, ("Sunlight", "Garlic"))
-alucard = Vampire("Wallachia", 1458, 1510, ("Holy Water",))
+# ...there was a guy named Vlad
 
-print({"dracula_age": dracula.age, "alucard_age": alucard.age})
+Dracula = Vampire({
+  'location': 'Transylvania',
+  'birthDate': 1428,
+  'deathDate': 1476,
+  'weaknesses': ['Sunlight', 'Garlic']
+})

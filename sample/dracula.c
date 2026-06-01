@@ -1,32 +1,28 @@
 #include <stdlib.h>
-#include <stdio.h>
 
 struct Vampire {
-    const char *location;
-    int birth_date;
-    int death_date;
-    const char *weaknesses[2];
+  char *location;
+  int birthday;
+  int deathdate;
+  char *weaknesses[2];
 };
 
-static int get_age(const struct Vampire *vampire) {
-    return vampire->death_date - vampire->birth_date;
-}
+int _calcAge(struct Vampire *v) { return v->deathdate - v->birthday; }
+
+int get_age(struct Vampire *v) { return _calcAge(v); }
 
 int main() {
-    struct Vampire dracula = {
-        .location = "Transylvania",
-        .birth_date = 1428,
-        .death_date = 1476,
-        .weaknesses = {"Sunlight", "Garlic"},
-    };
+  struct Vampire v;
 
-    struct Vampire alucard = {
-        .location = "Wallachia",
-        .birth_date = 1458,
-        .death_date = 1510,
-        .weaknesses = {"Holy Water", "Silver"},
-    };
+  /* There was a guy named Vlad */
+  v.location = malloc(12 * sizeof(char));
+  v.location = "Transylvania";
+  v.birthday = 1428;
+  v.deathdate = 1476;
+  v.weaknesses[0] = "Sunlight";
+  v.weaknesses[1] = "Garlic";
 
-    printf("Dracula: %d, Alucard: %d\n", get_age(&dracula), get_age(&alucard));
-    return EXIT_SUCCESS;
+  get_age(&v);
+
+  return 0;
 }

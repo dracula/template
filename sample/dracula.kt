@@ -1,16 +1,27 @@
-data class Vampire(
-    val location: String,
-    val birthDate: Int,
-    val deathDate: Int,
-    val weaknesses: List<String>,
+/*
+ * Once upon a time ...
+ */
+
+class Vampire(
+  val location: String,
+  val birthDate: Int,
+  val deathDate: Int,
+  val weaknesses: Array<String>
 ) {
-    val age: Int
-        get() = deathDate - birthDate
+  val age: Int
+    get() = this.calcAge()
+
+  fun calcAge() =
+    this.deathDate - this.birthDate
 }
 
-fun main() {
-    val dracula = Vampire("Transylvania", 1428, 1476, listOf("Sunlight", "Garlic"))
-    val alucard = Vampire("Wallachia", 1458, 1510, listOf("Holy Water"))
+// ... there was a guy named Vlad
 
-    println("Dracula: ${dracula.age}, Alucard: ${alucard.age}")
+fun main() {
+  Vampire(
+    "Transylvania",
+    1428,
+    1476,
+    arrayOf("Sunlight", "Garlic")
+  )
 }

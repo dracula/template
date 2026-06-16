@@ -4,7 +4,11 @@ In order to improve the quality of our screenshots, we created this folder with 
 
 ## Instructions
 
-After you're done taking a screenshot, feel free to delete this `sample` folder.
+1. Open one of the sample files in your app and take a screenshot.
+2. Save the image as [`screenshot.png`](../screenshot.png) at the repo root, or add multiple images to the [`screenshot/`](../screenshot/) folder.
+3. After you're done, feel free to delete this `sample` folder.
+
+For more details about single vs. multiple screenshots, see [`screenshot/SCREENSHOT.md`](../screenshot/SCREENSHOT.md).
 
 ## Why this is cool?
 

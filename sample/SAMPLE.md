@@ -1,6 +1,6 @@
 # Sample
 
-In order to improve the quality of our screenshots, we created this folder with standardized code snippets.
+To improve the quality of our screenshots, we created this folder with standardized code snippets.
 
 ## Instructions
 
@@ -10,13 +10,13 @@ In order to improve the quality of our screenshots, we created this folder with 
 
 For more details about single vs. multiple screenshots, see [`screenshot/SCREENSHOT.md`](../screenshot/SCREENSHOT.md).
 
-## Why this is cool?
+## Why is this cool?
 
-- It contains examples of string, number, and array
-- It contains examples of single line and multi-line comments
-- It contains examples of inheritance and functions
+- It contains examples of strings, numbers, and arrays.
+- It contains examples of single-line and multi-line comments.
+- It contains examples of inheritance and functions.
 - It's simple, funny, and silly :)
 
 ## Is there a programming language missing?
 
-Feel free to send a pull request. This will help new theme authors to create awesome screenshots.
+Feel free to send a pull request. This will help new theme authors create awesome screenshots.

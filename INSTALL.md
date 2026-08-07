@@ -2,7 +2,7 @@
 
 #### Install using Git
 
-If you are a git user, you can install the theme and keep up to date by cloning the repo:
+If you are a Git user, you can install the theme and keep it up to date by cloning the repo:
 
 ```bash
 git clone https://github.com/dracula/foobar.git
@@ -10,7 +10,7 @@ git clone https://github.com/dracula/foobar.git
 
 #### Install manually
 
-Download using the [GitHub `.zip` download](https://github.com/dracula/foobar/archive/main.zip) option and unzip them.
+Download using the [GitHub `.zip` download](https://github.com/dracula/foobar/archive/main.zip) option and unzip it.
 
 #### Activating theme
 

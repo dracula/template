@@ -49,3 +49,11 @@ npx prettier . --write
 The creators behind the scenes are [Lucas de França](https://github.com/luxonauta) and [Zeno Rocha](https://github.com/zenorocha).
 
 Reach out via [email](mailto:support@draculatheme.com) or follow us on Twitter/X: [Zeno Rocha](https://twitter.com/zenorocha) and [Luxonauta (Lucas)](https://twitter.com/luxonauta).
+
+## 🌐 How the website gets updated
+
+Theme pages on [draculatheme.com](https://draculatheme.com) are generated at build time from the files in each theme repository (`README.md`, `INSTALL.md`, and screenshots). The website doesn't fetch this content live.
+
+This means a merged pull request won't show up on the website right away; it appears after the next site rebuild. Rebuilds happen roughly once a week, usually in batches alongside other theme updates and maintenance fixes.
+
+If your change needs to go live sooner, mention our team in the pull request and we may trigger a rebuild manually.

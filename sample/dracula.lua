@@ -1,3 +1,4 @@
+-- Once upon a time...
 Vampire = {}
 
 function Vampire:new(obj)
@@ -16,6 +17,7 @@ function Vampire:get_age()
     return self:calc_age()
 end
 
+-- ...there was a guy named Vlad
 local vampire = Vampire:new{
     location = "Transylvania",
     birth_date = 1428,

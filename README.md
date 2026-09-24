@@ -18,9 +18,11 @@ This theme is maintained by the following person(s) and a bunch of [awesome cont
 
 ## Community
 
-- [Twitter](https://twitter.com/draculatheme) - Best for getting updates about themes and new stuff.
-- [GitHub](https://github.com/dracula/dracula-theme/discussions) - Best for asking questions and discussing issues.
-- [Discord](https://draculatheme.com/discord-invite) - Best for hanging out with the community.
+Join thousands of vampires using Dracula Theme around the world 🦇
+
+- [X (Twitter)](https://x.com/draculatheme) and [Instagram](https://www.instagram.com/draculatheme) - Follow for tips, news, and fun, and join the conversation.
+- [Discord](https://draculatheme.com/discord-invite) - Hang out and chat with the rest of the clan.
+- [GitHub Discussions](https://github.com/dracula/dracula-theme/discussions) - Ask questions and discuss issues.
 
 ## Dracula PRO
 
